@@ -10,6 +10,7 @@ class dashboardController extends Controller
     public function index()
     {
         $data['user'] = User::all();
+        $data['logged_user'] = auth()->user();
         return view('dashboard', $data);
     }
 

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\api\userRoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,6 @@ use App\Http\Controllers\dashboardController;
 
 Route::middleware('auth:api')->group(function () {
     Route::get('/user', [dashboardController::class, 'test']);
+
+    Route::resource('/user-role', userRoleController::class);
 });
